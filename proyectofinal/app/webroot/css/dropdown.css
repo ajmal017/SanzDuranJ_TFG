@@ -1,0 +1,78 @@
+.dropdown-container, .dropdown-message-notifications-container, .dropdown-inbox-container {
+    padding: 0px;
+}
+
+.dropdown-container > li, .dropdown-message-notifications-container > li, .dropdown-inbox-container > li {
+    padding: 10px 25px;
+    white-space: nowrap;
+    transition: background-color 0.05s;
+}
+
+.dropdown-message-notifications-container > li.cabecera-notificacion, .dropdown-inbox-container > li.cabecera-notificacion  {
+    background-color: #103184 !important;
+    color: white;
+}
+
+.dropdown-message-notifications-container > li:hover.notificacion, .dropdown-inbox-container > li:hover.notificacion {
+    background-color: #dfdfdf !important;
+    transition: background-color 0.05s !important;
+    cursor: pointer;
+}
+
+.dropdown-inbox-container > li.cabecera-inbox  {
+    background-color: #DB9059 !important;
+    color: white;
+}
+
+.dropdown-inbox-container > li:hover.email {
+    background-color: #dfdfdf !important;
+    transition: background-color 0.05s !important;
+    cursor: pointer;
+}
+
+.dropdown-container > li:HOVER, .dropdown-message-notifications-container > li:HOVER, .dropdown-inbox-container > li:HOVER {
+    background-color: #eeeeee;
+    transition: background-color 0.5s;
+}
+
+.dropdown-container > li > a, .dropdown-message-notifications-container > li > a, .dropdown-inbox-container > li > a {
+    background-color: transparent;
+    color: inherit;
+    padding: 3px 0px;
+}
+
+.dropdown-container > li > a:HOVER, .dropdown-message-notifications-container > li > a:HOVER, .dropdown-inbox-container > li > a:HOVER {
+    background-color: transparent;
+    color: inherit;
+}
+
+.dropdown-divider {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.dropdown-content {
+    padding: 5px 0px;
+}
+
+.dropdown-mark {
+    position: relative;
+    right: -15px;
+    transition: color 0.5s;
+}
+
+.dropdown-mark:HOVER {
+    color: #103184;
+}
+
+.dropdown-message-notifications-container, .dropdown-inbox-container {
+    width: 400px;
+    overflow-y: scroll;
+    max-height: 575px;
+}
+
+.ago-time-notification, .ago-time-email {
+    font-style: italic;
+    font-size: 12px;
+    color: gray;
+}

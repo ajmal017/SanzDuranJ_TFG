@@ -1,0 +1,1037 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>TS: TS Class Reference</title>
+<style>
+BODY,H1,H2,H3,H4,H5,H6,P,CENTER,TD,TH,UL,DL,DIV {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+BODY,TD {
+       font-size: 90%;
+}
+H1 {
+	text-align: center;
+       font-size: 160%;
+}
+H2 {
+       font-size: 120%;
+}
+H3 {
+       font-size: 100%;
+}
+CAPTION { font-weight: bold }
+DIV.qindex {
+	width: 100%;
+	background-color: #e8eef2;
+	border: 1px solid #84b0c7;
+	text-align: center;
+	margin: 2px;
+	padding: 2px;
+	line-height: 140%;
+}
+DIV.nav {
+	width: 100%;
+	background-color: #e8eef2;
+	border: 1px solid #84b0c7;
+	text-align: center;
+	margin: 2px;
+	padding: 2px;
+	line-height: 140%;
+}
+DIV.navtab {
+       background-color: #e8eef2;
+       border: 1px solid #84b0c7;
+       text-align: center;
+       margin: 2px;
+       margin-right: 15px;
+       padding: 2px;
+}
+TD.navtab {
+       font-size: 70%;
+}
+A.qindex {
+       text-decoration: none;
+       font-weight: bold;
+       color: #1A419D;
+}
+A.qindex:visited {
+       text-decoration: none;
+       font-weight: bold;
+       color: #1A419D
+}
+A.qindex:hover {
+	text-decoration: none;
+	background-color: #ddddff;
+}
+A.qindexHL {
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #6666cc;
+	color: #ffffff;
+	border: 1px double #9295C2;
+}
+A.qindexHL:hover {
+	text-decoration: none;
+	background-color: #6666cc;
+	color: #ffffff;
+}
+A.qindexHL:visited { text-decoration: none; background-color: #6666cc; color: #ffffff }
+A.el { text-decoration: none; font-weight: bold }
+A.elRef { font-weight: bold }
+A.code:link { text-decoration: none; font-weight: normal; color: #0000FF}
+A.code:visited { text-decoration: none; font-weight: normal; color: #0000FF}
+A.codeRef:link { font-weight: normal; color: #0000FF}
+A.codeRef:visited { font-weight: normal; color: #0000FF}
+A:hover { text-decoration: none; background-color: #f2f2ff }
+DL.el { margin-left: -1cm }
+.fragment {
+       font-family: monospace, fixed;
+       font-size: 95%;
+}
+PRE.fragment {
+	border: 1px solid #CCCCCC;
+	background-color: #f5f5f5;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 2px;
+	margin-right: 8px;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+DIV.ah { background-color: black; font-weight: bold; color: #ffffff; margin-bottom: 3px; margin-top: 3px }
+
+DIV.groupHeader {
+       margin-left: 16px;
+       margin-top: 12px;
+       margin-bottom: 6px;
+       font-weight: bold;
+}
+DIV.groupText { margin-left: 16px; font-style: italic; font-size: 90% }
+BODY {
+	background: white;
+	color: black;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+TD.indexkey {
+	background-color: #e8eef2;
+	font-weight: bold;
+	padding-right  : 10px;
+	padding-top    : 2px;
+	padding-left   : 10px;
+	padding-bottom : 2px;
+	margin-left    : 0px;
+	margin-right   : 0px;
+	margin-top     : 2px;
+	margin-bottom  : 2px;
+	border: 1px solid #CCCCCC;
+}
+TD.indexvalue {
+	background-color: #e8eef2;
+	font-style: italic;
+	padding-right  : 10px;
+	padding-top    : 2px;
+	padding-left   : 10px;
+	padding-bottom : 2px;
+	margin-left    : 0px;
+	margin-right   : 0px;
+	margin-top     : 2px;
+	margin-bottom  : 2px;
+	border: 1px solid #CCCCCC;
+}
+TR.memlist {
+   background-color: #f0f0f0; 
+}
+P.formulaDsp { text-align: center; }
+IMG.formulaDsp { }
+IMG.formulaInl { vertical-align: middle; }
+SPAN.keyword       { color: #008000 }
+SPAN.keywordtype   { color: #604020 }
+SPAN.keywordflow   { color: #e08000 }
+SPAN.comment       { color: #800000 }
+SPAN.preprocessor  { color: #806020 }
+SPAN.stringliteral { color: #002080 }
+SPAN.charliteral   { color: #008080 }
+.mdescLeft {
+       padding: 0px 8px 4px 8px;
+	font-size: 80%;
+	font-style: italic;
+	background-color: #FAFAFA;
+	border-top: 1px none #E0E0E0;
+	border-right: 1px none #E0E0E0;
+	border-bottom: 1px none #E0E0E0;
+	border-left: 1px none #E0E0E0;
+	margin: 0px;
+}
+.mdescRight {
+       padding: 0px 8px 4px 8px;
+	font-size: 80%;
+	font-style: italic;
+	background-color: #FAFAFA;
+	border-top: 1px none #E0E0E0;
+	border-right: 1px none #E0E0E0;
+	border-bottom: 1px none #E0E0E0;
+	border-left: 1px none #E0E0E0;
+	margin: 0px;
+}
+.memItemLeft {
+	padding: 1px 0px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+.memItemRight {
+	padding: 1px 8px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+.memTemplItemLeft {
+	padding: 1px 0px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+.memTemplItemRight {
+	padding: 1px 8px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+.memTemplParams {
+	padding: 1px 0px 0px 8px;
+	margin: 4px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #E0E0E0;
+	border-right-color: #E0E0E0;
+	border-bottom-color: #E0E0E0;
+	border-left-color: #E0E0E0;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+       color: #606060;
+	background-color: #FAFAFA;
+	font-size: 80%;
+}
+.search     { color: #003399;
+              font-weight: bold;
+}
+FORM.search {
+              margin-bottom: 0px;
+              margin-top: 0px;
+}
+INPUT.search { font-size: 75%;
+               color: #000080;
+               font-weight: normal;
+               background-color: #e8eef2;
+}
+TD.tiny      { font-size: 75%;
+}
+a {
+	color: #1A41A8;
+}
+a:visited {
+	color: #2A3798;
+}
+.dirtab { padding: 4px;
+          border-collapse: collapse;
+          border: 1px solid #84b0c7;
+}
+TH.dirtab { background: #e8eef2;
+            font-weight: bold;
+}
+HR { height: 1px;
+     border: none;
+     border-top: 1px solid black;
+}
+
+/* Style for detailed member documentation */
+.memtemplate {
+  font-size: 80%;
+  color: #606060;
+  font-weight: normal;
+} 
+.memnav { 
+  background-color: #e8eef2;
+  border: 1px solid #84b0c7;
+  text-align: center;
+  margin: 2px;
+  margin-right: 15px;
+  padding: 2px;
+}
+.memitem {
+  padding: 4px;
+  background-color: #eef3f5;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dedeee;
+  -moz-border-radius: 8px 8px 8px 8px;
+}
+.memname {
+  white-space: nowrap;
+  font-weight: bold;
+}
+.memdoc{
+  padding-left: 10px;
+}
+.memproto {
+  background-color: #d5e1e8;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #84b0c7;
+  font-weight: bold;
+  -moz-border-radius: 8px 8px 8px 8px;
+}
+.paramkey {
+  text-align: right;
+}
+.paramtype {
+  white-space: nowrap;
+}
+.paramname {
+  color: #602020;
+  font-style: italic;
+}
+/* End Styling for detailed member documentation */
+
+/* for the tree view */
+.ftvtree {
+	font-family: sans-serif;
+	margin:0.5em;
+}
+.directory { font-size: 9pt; font-weight: bold; }
+.directory h3 { margin: 0px; margin-top: 1em; font-size: 11pt; }
+.directory > h3 { margin-top: 0; }
+.directory p { margin: 0px; white-space: nowrap; }
+.directory div { display: none; margin: 0px; }
+.directory img { vertical-align: -30%; }
+
+</style>
+</head><body>
+<!-- Generated by Doxygen 1.4.7 -->
+
+
+<h1>TS Class Reference</h1><!-- doxytag: class="TS" -->Class to performs basic operations on time series.  
+<a href="#_details">More...</a>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#0a45c906a411f3e2d3ba986c9c7633ac">TS</a> ($name=&quot;&quot;, $s=null, $l=null)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructor.  <a href="#0a45c906a411f3e2d3ba986c9c7633ac"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#d66087d3c2cda6f1d6e0bbf64581a045">ts_parseline</a> ($s, $exclude_zeroes=false)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Parse a text line for time series values.  <a href="#d66087d3c2cda6f1d6e0bbf64581a045"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#fc4e1ec44d98f09fde887e23e55dd083">ts_setlabel</a> ($label=array())</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set the label for the time series.  <a href="#fc4e1ec44d98f09fde887e23e55dd083"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#674f943fb1ac504815d411beaa34ef41">ts_count</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Count the number of elements in a time series, excluding zeroes.  <a href="#674f943fb1ac504815d411beaa34ef41"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#e32d9a47514dc95ff4b03defc5ca92a2">ts_name</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get the time series name.  <a href="#e32d9a47514dc95ff4b03defc5ca92a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#dc7c2026816646d15b20cec24a1bc346">ts_print</a> ($with_label=true)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Print the time series values.  <a href="#dc7c2026816646d15b20cec24a1bc346"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#58ffd5b6f243bcd633d51e71258fbef2">ts_mean</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the mean value of the time series.  <a href="#58ffd5b6f243bcd633d51e71258fbef2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#306dfd8e4c5212910192b213ddf9b4ba">ts_weighted_mean</a> ($weights=array())</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the weighted mean of the time series.  <a href="#306dfd8e4c5212910192b213ddf9b4ba"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#0512e831a0ac5689ff8a25df9b78950a">ts_moving_average</a> ($periods=3)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the moving average.  <a href="#0512e831a0ac5689ff8a25df9b78950a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#1fb23dc82b24abc98289639c2d9c74ed">ts_moving_weighted_average</a> ($periods=3, $weights=array())</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the weighted moving average.  <a href="#1fb23dc82b24abc98289639c2d9c74ed"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="04f5e24d530b9719b8b2387856a72955"></a><!-- doxytag: member="TS::ts_stdev" ref="04f5e24d530b9719b8b2387856a72955" args="()" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#04f5e24d530b9719b8b2387856a72955">ts_stdev</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the standard deviation of the time series. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#833b712c53901540b3cff28cb62056c5">ts_var</a> ($type=&quot;pop&quot;)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the variance of the time series.  <a href="#833b712c53901540b3cff28cb62056c5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#db351bcf75d6e5daa0af43241ce2915e">ts_acf</a> ($lags=10)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Evaluate the autocorrelation of the time series.  <a href="#db351bcf75d6e5daa0af43241ce2915e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#6d28942502300f16bdd5312698785146">ts_acf_plot</a> ($lags=10, $x, $y, $title)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Plot the autocorrelation of the time series.  <a href="#6d28942502300f16bdd5312698785146"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#7b3420b9994da44ca4e5dba18c9bd5a5">ts_simple_linear_regression</a> ($descriptor)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the linear regression coefficients alfa and beta.  <a href="#7b3420b9994da44ca4e5dba18c9bd5a5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#24df63016e617bf31e141a4a1bac9ff7">ts_lag</a> ($periods=1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Return the lagged time series (i.e. ts[i] --&gt; ts[i+periods]).  <a href="#24df63016e617bf31e141a4a1bac9ff7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#9d8d9d7653b31519f8f5bdb7c69ea124">ts_lag_plot</a> ($periods=1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Plot the lagged time series (i.e. ts[i] --&gt; ts[i+periods]).  <a href="#9d8d9d7653b31519f8f5bdb7c69ea124"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#4450867b56e823bf07a569ba8bef7be4">ts_smoothing_simple</a> ($alfa=0.5, $Szero=null, $init_periods=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the simple exponential smoothing forecast.  <a href="#4450867b56e823bf07a569ba8bef7be4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_s.html#52a9ece260ebc96a1b2b75ef70e2ca76">ts_smoothing_trend</a> ($alfa=0.5, $beta=0.5, $Szero=null, $Tzero=null, $init_periods=0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calculate the exponential smoothing forecast with trend.  <a href="#52a9ece260ebc96a1b2b75ef70e2ca76"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Detailed Description</h2>
+Class to performs basic operations on time series. 
+<p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="0a45c906a411f3e2d3ba986c9c7633ac"></a><!-- doxytag: member="TS::TS" ref="0a45c906a411f3e2d3ba986c9c7633ac" args="($name=&quot;&quot;, $s=null, $l=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::TS           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>name</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>s</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>l</em> = <code>null</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Constructor. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$name</em>&nbsp;</td><td>Name of the time series </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$s</em>&nbsp;</td><td>String to be parsed for time series values </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$l</em>&nbsp;</td><td>Array of labels </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="db351bcf75d6e5daa0af43241ce2915e"></a><!-- doxytag: member="TS::ts_acf" ref="db351bcf75d6e5daa0af43241ce2915e" args="($lags=10)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_acf           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>lags</em> = <code>10</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Evaluate the autocorrelation of the time series. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$lags</em>&nbsp;</td><td>Number of lags </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="6d28942502300f16bdd5312698785146"></a><!-- doxytag: member="TS::ts_acf_plot" ref="6d28942502300f16bdd5312698785146" args="($lags=10, $x, $y, $title)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_acf_plot           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>lags</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>title</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Plot the autocorrelation of the time series. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$lags</em>&nbsp;</td><td>Number of lags </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$x</em>&nbsp;</td><td>Width of the graph </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$y</em>&nbsp;</td><td>Height of the graph </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$title</em>&nbsp;</td><td>Title of the graph </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="674f943fb1ac504815d411beaa34ef41"></a><!-- doxytag: member="TS::ts_count" ref="674f943fb1ac504815d411beaa34ef41" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_count           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Count the number of elements in a time series, excluding zeroes. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>Set the class variable $len </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="24df63016e617bf31e141a4a1bac9ff7"></a><!-- doxytag: member="TS::ts_lag" ref="24df63016e617bf31e141a4a1bac9ff7" args="($periods=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_lag           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>periods</em> = <code>1</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Return the lagged time series (i.e. ts[i] --&gt; ts[i+periods]). 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$periods</em>&nbsp;</td><td>Number of lag periods </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Lagged time series </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="9d8d9d7653b31519f8f5bdb7c69ea124"></a><!-- doxytag: member="TS::ts_lag_plot" ref="9d8d9d7653b31519f8f5bdb7c69ea124" args="($periods=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_lag_plot           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>periods</em> = <code>1</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Plot the lagged time series (i.e. ts[i] --&gt; ts[i+periods]). 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$periods</em>&nbsp;</td><td>Number of lag periods </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Modify the graphic routines </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="58ffd5b6f243bcd633d51e71258fbef2"></a><!-- doxytag: member="TS::ts_mean" ref="58ffd5b6f243bcd633d51e71258fbef2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_mean           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the mean value of the time series. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>The mean of the time series </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="0512e831a0ac5689ff8a25df9b78950a"></a><!-- doxytag: member="TS::ts_moving_average" ref="0512e831a0ac5689ff8a25df9b78950a" args="($periods=3)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_moving_average           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>periods</em> = <code>3</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the moving average. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$periods</em>&nbsp;</td><td>Number of periods to consider </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>The moving average </dd></dl>
+<dl compact><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Return an array of the values </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="1fb23dc82b24abc98289639c2d9c74ed"></a><!-- doxytag: member="TS::ts_moving_weighted_average" ref="1fb23dc82b24abc98289639c2d9c74ed" args="($periods=3, $weights=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_moving_weighted_average           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>periods</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>weights</em> = <code>array()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the weighted moving average. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$periods</em>&nbsp;</td><td>Number of periods to consider </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$weights</em>&nbsp;</td><td>Weights to use </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>The weighted moving average </dd></dl>
+<dl compact><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Return an array of the values </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="e32d9a47514dc95ff4b03defc5ca92a2"></a><!-- doxytag: member="TS::ts_name" ref="e32d9a47514dc95ff4b03defc5ca92a2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_name           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Get the time series name. 
+<p>
+<dl compact><dt><b>Returns:</b></dt><dd>The name of the time series </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="d66087d3c2cda6f1d6e0bbf64581a045"></a><!-- doxytag: member="TS::ts_parseline" ref="d66087d3c2cda6f1d6e0bbf64581a045" args="($s, $exclude_zeroes=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_parseline           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>exclude_zeroes</em> = <code>false</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Parse a text line for time series values. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$s</em>&nbsp;</td><td>A string containing the time series values </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$exclude_zeroes</em>&nbsp;</td><td>if true, exclude the zeroes from the time series </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Set the class variable $ts </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="dc7c2026816646d15b20cec24a1bc346"></a><!-- doxytag: member="TS::ts_print" ref="dc7c2026816646d15b20cec24a1bc346" args="($with_label=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_print           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>with_label</em> = <code>true</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Print the time series values. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$with_label</em>&nbsp;</td><td>If true, print the labels </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>The name of the time series </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="fc4e1ec44d98f09fde887e23e55dd083"></a><!-- doxytag: member="TS::ts_setlabel" ref="fc4e1ec44d98f09fde887e23e55dd083" args="($label=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_setlabel           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>label</em> = <code>array()</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Set the label for the time series. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$label</em>&nbsp;</td><td>Labels fot the time series </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>Set the class variable $labels </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="7b3420b9994da44ca4e5dba18c9bd5a5"></a><!-- doxytag: member="TS::ts_simple_linear_regression" ref="7b3420b9994da44ca4e5dba18c9bd5a5" args="($descriptor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_simple_linear_regression           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>descriptor</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the linear regression coefficients alfa and beta. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$descriptor</em>&nbsp;</td><td>Array of the independent variables Xt (see note) </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Note:</b></dt><dd>Yt = alfa * Xt + beta </dd></dl>
+<dl compact><dt><b>Returns:</b></dt><dd>array($alfa, $beta) </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="4450867b56e823bf07a569ba8bef7be4"></a><!-- doxytag: member="TS::ts_smoothing_simple" ref="4450867b56e823bf07a569ba8bef7be4" args="($alfa=0.5, $Szero=null, $init_periods=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_smoothing_simple           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>alfa</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>Szero</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>init_periods</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the simple exponential smoothing forecast. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$alfa</em>&nbsp;</td><td>Smoothing parameter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$Szero</em>&nbsp;</td><td>Initializing value for S </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$init_periods</em>&nbsp;</td><td>Number of periods to be used to initialize S </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Note:</b></dt><dd>The forecast for the period t+1 is calculated as<br>
+ Ft+1 = St <br>
+ St = alfa * At + (1-alfa)*St-1 </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="52a9ece260ebc96a1b2b75ef70e2ca76"></a><!-- doxytag: member="TS::ts_smoothing_trend" ref="52a9ece260ebc96a1b2b75ef70e2ca76" args="($alfa=0.5, $beta=0.5, $Szero=null, $Tzero=null, $init_periods=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_smoothing_trend           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>alfa</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>beta</em> = <code>0.5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>Szero</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>Tzero</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>init_periods</em> = <code>0</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the exponential smoothing forecast with trend. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$alfa</em>&nbsp;</td><td>Smoothing parameter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$beta</em>&nbsp;</td><td>Trend parameter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$Szero</em>&nbsp;</td><td>Initializing value for S </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$Tzero</em>&nbsp;</td><td>Initializing value for T </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>$init_periods</em>&nbsp;</td><td>Number of periods to be used to initialize S </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Note:</b></dt><dd>The forecast for the period t+1 is calculated as<br>
+ Ft+1 = St +Tt<br>
+ St = alfa * At + (1-alfa)*(St-1 * Tt-1)<br>
+ Tt = beta * (St - St-1) + (1-beta)*Tt-1 </dd></dl>
+
+</div>
+</div><p>
+<a class="anchor" name="833b712c53901540b3cff28cb62056c5"></a><!-- doxytag: member="TS::ts_var" ref="833b712c53901540b3cff28cb62056c5" args="($type=&quot;pop&quot;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_var           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>type</em> = <code>&quot;pop&quot;</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the variance of the time series. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$type</em>&nbsp;</td><td>(To BE DONE) </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="306dfd8e4c5212910192b213ddf9b4ba"></a><!-- doxytag: member="TS::ts_weighted_mean" ref="306dfd8e4c5212910192b213ddf9b4ba" args="($weights=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TS::ts_weighted_mean           </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>weights</em> = <code>array()</code>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Calculate the weighted mean of the time series. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>$weights</em>&nbsp;</td><td>The weights to be used </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Returns:</b></dt><dd>The weighted mean of the time series </dd></dl>
+
+</div>
+</div>
+</body>
+</html>

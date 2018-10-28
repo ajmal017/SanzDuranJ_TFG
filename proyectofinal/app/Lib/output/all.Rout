@@ -1,0 +1,9 @@
+'getSymbols' currently uses auto.assign=TRUE by default, but will
+use auto.assign=FALSE in 0.5-0. You will still be able to use
+'loadSymbols' to automatically load data. getOption("getSymbols.env")
+and getOption("getSymbols.auto.assign") will still be checked for
+alternate defaults.
+
+This message is shown once per session and may be disabled by setting 
+options("getSymbols.warning4.0"=FALSE). See ?getSymbols for details.
+

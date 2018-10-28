@@ -1,0 +1,46 @@
+.modal-content {
+    border-radius: 6px;
+}
+
+.modal-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-close {
+    height: 51px;
+    line-height: 51px;
+    margin-top: -17px !important;
+}
+
+.modal-close > span {
+    color: #ffffff;
+    font-size: 35px;
+    line-height: 51px;
+    height: 51px;
+}
+
+.modal-header-primary {
+    background-color: #103184;
+    color: #ffffff;
+}
+
+.modal-header-success {
+    background-color: #6A826C;
+    color: #ffffff;
+}
+
+.modal-header-info {
+    background-color: #7484BF;
+    color: #ffffff;
+}
+
+.modal-header-warning {
+    background-color: #DB9059;
+    color: #ffffff;
+}
+
+.modal-header-danger {
+    background-color: #FF1821;
+    color: #ffffff;
+}

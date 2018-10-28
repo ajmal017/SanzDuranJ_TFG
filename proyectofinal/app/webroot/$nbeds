@@ -1,0 +1,128 @@
+
+R version 3.3.3 (2017-03-06) -- "Another Canoe"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener m醩 informaci髇 y
+'citation()' para saber c髆o citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+> #!/usr/bin/env Rscript
+> setwd('C:/xampp/htdocs/proyectofinal/app/lib/output/')
+> args <- commandArgs(TRUE)
+> 
+> library(quantmod)
+Loading required package: xts
+Loading required package: zoo
+
+Attaching package: 'zoo'
+
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+
+Loading required package: TTR
+Version 0.4-0 included new data defaults. See ?getSymbols.
+> library(fractaldim)
+Loading required package: abind
+> 
+> getSymbols("AAPL",src="yahoo", from="2000-01-01")
+'getSymbols' currently uses auto.assign=TRUE by default, but will
+use auto.assign=FALSE in 0.5-0. You will still be able to use
+'loadSymbols' to automatically load data. getOption("getSymbols.env")
+and getOption("getSymbols.auto.assign") will still be checked for
+alternate defaults.
+
+This message is shown once per session and may be disabled by setting 
+options("getSymbols.warning4.0"=FALSE). See ?getSymbols for details.
+
+
+WARNING: There have been significant changes to Yahoo Finance data.
+Please see the Warning section of '?getSymbols.yahoo' for details.
+
+This message is shown once per session and may be disabled by setting
+options("getSymbols.yahoo.warning"=FALSE).
+[1] "AAPL"
+> 
+> # Predecimos a partir del endingIndex
+> 
+> endingIndex <-1000
+> mainData <- AAPL$AAPL.Adjusted
+> colnames(mainData) <- c("data")
+> TEST <- mainData[1:endingIndex]
+> total_error <- 0
+> error_per_prediction <- c()
+> 
+> #Este es el par谩metro correspondiente al m茅todo de calculo de las dimensiones fractales
+> method <- "rodogram"
+> 
+> #Numero de muestras a pintar para cada suposici贸n(guess)
+> random_sample_count <- 200
+> 
+> Sm <- as.data.frame(TEST, row.names = NULL)
+> 
+> #Hacer 500 predicciones de los siguientes valores de Sm
+> for(i in 1:50){
++   delta <- c()
++ #Calcular delta entre los valores consecutivos de Sm para usarlos para la construcci贸n de la distribuci贸n normal para pintar estimaciones
++   
++   for(j in 2:length(Sm$data)){
++     delta <- rbind(delta, Sm$data[j]-Sm$data[j-1])
++   }
++   
++   # Calcular la desviaci贸n est谩ndar de delta
++   Std_delta <- apply(delta, 2, sd)
++   
++   #Actualizar la dimension fractal usada como referencia
++   V_Reference <- fd.estimate(Sm$data, method=method, trim=TRUE)$fd
++  
++   
++ 
++ #Crear 50  estimaciones para pintar de la distribuci贸n normal, usando el ultimo valor de Sm como mean y la desviaci贸n est谩ndar de delta como desviaci贸n est谩ndar. 
++ 
++   Sm_guesses <- rnorm(random_sample_count , mean=Sm$data[length(Sm$data)], sd=Std_delta )
++   
++   minDifference = 1000000
++   
++ #Comprobar la dimension fractal de Sm mas cada una de las diferentes estimaciones y elegir el valor con la menor diferencia con la dimension fractal de referencia.
++   
++   for(j in 1:length(Sm_guesses)){
++     new_Sm <- rbind(Sm, Sm_guesses[j])
++     new_V_Reference <- fd.estimate(new_Sm$data, method=method, trim=TRUE)$fd
++     
++     if (abs(new_V_Reference - V_Reference) < minDifference ){      
++       Sm_prediction <- Sm_guesses[j]
++       minDifference = abs(new_V_Reference - V_Reference)
++     }
++   }
++   
++   #A帽adir la predicci贸n a Sm
++   Sm <- rbind(Sm, Sm_prediction)
++   Sm_real <- as.numeric(mainData$data[endingIndex+i])
++   error_per_prediction <- rbind(error_per_prediction, (Sm_prediction-Sm_real )/Sm_real )
++   total_error <- total_error + ((Sm_prediction-Sm_real )/Sm_real )^2
++ }
+> 
+> total_error <- sqrt(total_error)
+> print(total_error)
+[1] 1.922645
+> png(filename="C:/xampp/htdocs/proyectofinal/app/webroot/img/output/outputerror.png", width = 800, height = 600)
+> plot(error_per_prediction*100, xlab="Prediction Index", ylab="Error (%)")
+> dev.off()
+null device 
+          1 
+> sink('analysis-output.txt', append=FALSE, type = c("output", "message"))
+> png(filename="C:/xampp/htdocs/proyectofinal/app/webroot/img/output/outputrodogram.png", width = 800, height = 600)
+> plot(Sm$data, type="l", xlab="Value Index", ylab="Adjusted Close", main="AAPL Rodogram")
+> lines(as.data.frame(mainData$data[1:(endingIndex+50)], row.names = NULL), col="blue")
+> dev.off()
+> sink('analysis-output.txt', append=FALSE, type = c("output", "message"))
+> 
